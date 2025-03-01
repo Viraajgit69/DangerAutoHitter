@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extension Conflict Warning</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --danger: #dc2626;
+            --danger-dark: #b91c1c;
+            --danger-light: #fee2e2;
+            --danger-lighter: #fef2f2;
+            --warning: #f59e0b;
+            --warning-light: #fef3c7;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f9fafb;
+            --card: #ffffff;
+            --border: #e5e7eb;
+            --telegram: #0088cc;
+            --telegram-dark: #0077b5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-image: linear-gradient(to bottom right, #fee2e2, #fef2f2);
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: var(--card);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.1), 0 8px 10px -6px rgba(220, 38, 38, 0.1);
+            overflow: hidden;
+            border: 1px solid rgba(220, 38, 38, 0.1);
+        }
+        
+        .header {
+            background-color: var(--danger);
+            padding: 24px;
+            border-bottom: 1px solid var(--danger-dark);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .warning-icon {
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .header h1 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .content {
+            padding: 24px;
+        }
+        
+        .description {
+            margin-bottom: 24px;
+            color: var(--text);
+            font-size: 1rem;
+            background-color: var(--danger-lighter);
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 4px solid var(--danger);
+        }
+        
+        .description strong {
+            color: var(--danger);
+        }
+        
+        .actions {
+            display: flex;
+            justify-content: center;
+            margin-top: 24px;
+        }
+        
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            padding: 14px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0, 136, 204, 0.1), 0 2px 4px -1px rgba(0, 136, 204, 0.06);
+        }
+        
+        .telegram-button {
+            background-color: var(--telegram);
+            color: white;
+        }
+        
+        .telegram-button:hover {
+            background-color: var(--telegram-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 10px -1px rgba(0, 136, 204, 0.1), 0 2px 4px -1px rgba(0, 136, 204, 0.06);
+        }
+        
+        .telegram-button:active {
+            transform: translateY(0);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 16px;
+            color: var(--text-light);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border);
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .footer span {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .heart {
+            color: var(--danger);
+            animation: heartbeat 1.5s ease infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                border-radius: 8px;
+            }
+            
+            .header {
+                padding: 16px;
+            }
+            
+            .content {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <svg class="warning-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            <h1>Extension Conflict Detected</h1>
+        </div>
+        
+        <div class="content">
+            <p class="description">
+                <strong>Warning:</strong> <strong>Propaganda Auto CO</strong> cannot function properly with other similar extensions installed. 
+                Please remove any conflicting extensions to ensure optimal performance and prevent conflicts.
+            </p>
+            
+            <div class="actions">
+                <a href="https://t.me/+S7Ku9u3Cl2ZjZDY1" class="button telegram-button" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m22 2-7 20-4-9-9-4Z"></path>
+                        <path d="M22 2 11 13"></path>
+                    </svg>
+                    Join Telegram Channel for Help
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <span>
+                Made with 
+                <svg class="heart" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#dc2626" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                </svg>
+                by Propaganda
+            </span>
+        </div>
+    </div>
+</body>
+</html>
